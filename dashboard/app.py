@@ -3,11 +3,18 @@ import pandas as pd
 import joblib
 import plotly.express as px
 
-# Load data
+# LOAD DATA
+
+
 df = pd.read_csv("results.csv")
 
-# Load model
+# LOAD MODEL
+
+
 model = joblib.load("model.pkl")
+
+# PAGE CONFIG
+
 
 st.set_page_config(
     page_title="Fraud Detection Dashboard",
@@ -16,7 +23,9 @@ st.set_page_config(
 
 st.title("💳 Fraud Detection Dashboard")
 
-# SIDEBAR
+# SIDEBAR FILTER
+
+
 st.sidebar.header("Filters")
 
 risk_filter = st.sidebar.multiselect(
@@ -29,7 +38,7 @@ filtered_df = df[
     df['RiskTier'].isin(risk_filter)
 ]
 
-# PAGE 1 — OVERVIEW
+# OVERVIEW SECTION
 
 
 st.header("Overview")
@@ -43,18 +52,19 @@ col1.metric(
 
 col2.metric(
     "Fraud Count",
-    filtered_df['ActualFraud'].sum()
+    int(filtered_df['ActualFraud'].sum())
 )
 
 col3.metric(
-    "Average Fraud Amount",
+    "Average Transaction Amount",
     round(
         filtered_df['TransactionAmt'].mean(),
         2
     )
 )
 
-# RISK TIER CHART
+# RISK TIER PIE CHART
+
 
 fig = px.pie(
     filtered_df,
@@ -63,15 +73,17 @@ fig = px.pie(
     hole=0.4
 )
 
-st.plotly_chart(fig)
+st.plotly_chart(fig, use_container_width=True)
 
 # TRANSACTION EXPLORER
+
 
 st.header("Transaction Explorer")
 
 st.dataframe(filtered_df.head(100))
 
-# SEARCH BY TRANSACTION ID
+# SEARCH TRANSACTION
+
 
 st.header("Search Transaction")
 
