@@ -1,0 +1,82 @@
+Real-Time Fraud Detection System
+
+PROJECT OBJECTIVE
+
+The objective of this project was to develop a machine learning-based fraud detection system capable of identifying fraudulent financial transactions efficiently. The project focuses on detecting anomalies in transaction behavior using advanced classification models, explainable AI, and interactive visualizations.
+
+------------------------------------------------------------
+
+DATASET USED
+
+The project uses the IEEE-CIS Fraud Detection dataset from Kaggle.
+
+Datasets Used:
+• train_transaction.csv
+• train_identity.csv
+
+Both datasets were merged using the TransactionID column.
+
+------------------------------------------------------------
+
+DATA PREPROCESSING
+
+Several preprocessing techniques were applied:
+
+• Missing value handling
+• Feature engineering
+• Label encoding
+• Data scaling
+• Class imbalance handling using SMOTE
+
+New features such as HourOfDay and AmtToMeanRatio were created to improve fraud prediction performance.
+
+------------------------------------------------------------
+
+MODELS IMPLEMENTED
+
+The following machine learning models were implemented:
+
+• LightGBM
+• XGBoost
+• Isolation Forest
+
+Among these, LightGBM achieved the best overall performance due to its strong Recall, F1-Score, and PR-AUC values.
+
+------------------------------------------------------------
+
+EXPLAINABLE AI USING SHAP
+
+SHAP (SHapley Additive Explanations) was used to interpret model predictions and identify the most important fraud indicators.
+
+Top fraud indicators identified:
+• Transaction Amount
+• Transaction Timing
+• Amount Ratio Features
+
+------------------------------------------------------------
+
+DASHBOARD DEVELOPMENT
+
+An interactive Streamlit dashboard was developed to visualize:
+
+• Fraud probability
+• Risk segmentation
+• Transaction analysis
+• Fraud trends
+
+The dashboard allows users to explore transactions and filter by risk tiers.
+
+------------------------------------------------------------
+
+KEY FINDINGS
+
+• Fraudulent transactions generally had higher transaction amounts.
+• Suspicious transactions often occurred during unusual hours.
+• LightGBM provided the best fraud detection performance.
+• Explainable AI improved model transparency and interpretability.
+
+------------------------------------------------------------
+
+CONCLUSION
+
+The project successfully developed a complete fraud detection pipeline using machine learning, explainable AI, and dashboard deployment. The system can help financial organizations reduce fraud losses, improve transaction monitoring, and strengthen fraud prevention strategies.
