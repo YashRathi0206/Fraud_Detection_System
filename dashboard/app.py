@@ -6,12 +6,12 @@ import plotly.express as px
 # LOAD DATA
 
 
-df = pd.read_csv("results.csv")
+df = pd.read_csv("dashboard/results.csv")
 
 # LOAD MODEL
 
 
-model = joblib.load("model.pkl")
+model = joblib.load("dashboard/model.pkl")
 
 # PAGE CONFIG
 
