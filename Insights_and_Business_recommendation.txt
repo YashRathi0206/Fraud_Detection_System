@@ -1,0 +1,72 @@
+INSIGHTS & BUSINESS RECOMMENDATIONS
+
+
+1. WHICH MODEL PERFORMED BEST AND WHY?
+
+Among all the implemented machine learning models, LightGBM achieved the best overall performance in fraud detection. It provided strong Recall, F1-Score, ROC-AUC, and PR-AUC values while efficiently handling the highly imbalanced fraud dataset. LightGBM also trained faster and worked effectively with engineered features and SHAP explainability.
+
+------------------------------------------------------------
+
+2. WHY PR-AUC MATTERS MORE THAN ACCURACY IN FRAUD DETECTION?
+
+Fraud detection datasets are highly imbalanced because fraudulent transactions are very rare compared to legitimate transactions. A model can achieve very high accuracy simply by predicting most transactions as non-fraud. PR-AUC focuses on Precision and Recall, which are more important because they measure how effectively the model identifies actual fraud cases while minimizing false alarms.
+
+------------------------------------------------------------
+
+3. TOP 3 FRAUD SIGNALS IDENTIFIED USING SHAP
+
+The SHAP Explainable AI analysis identified the following important fraud indicators:
+
+• Transaction Amount
+• Transaction Time (HourOfDay)
+• Amount Ratio Features (AmtToMeanRatio)
+
+These features had the highest impact on fraud prediction probability.
+
+------------------------------------------------------------
+
+4. COMMON CHARACTERISTICS OF CRITICAL RISK TRANSACTIONS
+
+Critical Risk transactions generally showed:
+
+• Higher transaction amounts
+• Unusual transaction timings
+• Abnormal behavioral patterns
+• Higher fraud probability scores
+• Anomalous transaction distributions
+
+------------------------------------------------------------
+
+5. TWO ACTIONABLE FRAUD PREVENTION POLICIES
+
+1. Enable multi-factor authentication (MFA) for high-risk transactions.
+
+2. Automatically flag suspicious transactions occurring during unusual hours for manual verification.
+
+------------------------------------------------------------
+
+6. ESTIMATED MONEY SAVED ANNUALLY
+
+An effective fraud detection system can significantly reduce financial losses caused by fraudulent transactions. Early fraud detection can help businesses save operational costs, reduce chargeback losses, and improve customer trust and security.
+
+------------------------------------------------------------
+
+7. MODEL LIMITATIONS
+
+• Fraud patterns continuously evolve over time.
+• Some features contain missing or noisy information.
+• Isolation Forest underperformed on complex fraud behaviors.
+• The model may require periodic retraining for real-world deployment.
+
+------------------------------------------------------------
+
+8. ADDITIONAL DATA THAT COULD IMPROVE PERFORMANCE
+
+The following additional features could improve fraud detection accuracy:
+
+• IP address history
+• Device fingerprinting
+• Geolocation data
+• Merchant category information
+• User transaction history
+• Behavioral analytics data
